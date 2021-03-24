@@ -1,11 +1,13 @@
 package packageP1;
 
-/* 1. Super statement should be first in child class constructor!
+/*  This class illustrates the Super keyword in Java.
+ * 1. Super statement should be first in child class constructor!
  * 2. Super can be used to access parent variables from child class 
  *    when both class have same variable name.
  * 3. Super can be used to access parent class method having same name. 
  * 
  */
+
 class SuperEx1{
 	int variable=20;
 	SuperEx1(){
@@ -13,8 +15,8 @@ class SuperEx1{
 	}
 	
 	SuperEx1(int value){
-		int var3=value;
-		System.out.println("Paremetrized constructor! value passed: "+var3);
+		int var=value;
+		System.out.println("Paremetrized constructor! value passed: "+var);
 	}
 	
 	void method() {
@@ -28,8 +30,8 @@ public class SuperEx extends SuperEx1{
 		super();
 		System.out.println("Child class Constructor!!");
 	}
-	SuperEx(int c){
-		super(c);
+	SuperEx(int var){
+		super(var);
 		System.out.println("Child class paremetrized Constructor!!");
 	}
 	void method() {
@@ -47,9 +49,7 @@ public class SuperEx extends SuperEx1{
 		ob1.method();
 		System.out.println(ob1.var);
 		System.out.println("------------");
-		
-		
-	}
+		}
 
 }
 
