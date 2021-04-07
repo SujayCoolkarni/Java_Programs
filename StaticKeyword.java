@@ -21,7 +21,7 @@ class StaticEx{
 	
 	static int  method() {
 		System.out.println("Called Static method fromm StaticEx class!");
-		//System.out.println(name); can't use non-static variable inside method
+		//System.out.println(name); can't use non-static variable inside static method
 		return val;
 	}
 	
