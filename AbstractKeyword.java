@@ -15,7 +15,13 @@ package packageP1;
  * 9. We can call abstract class constructor by using "super keyword" in subclass constructor.
  */
 
-abstract class AbstractExample{
+ abstract interface Hello {
+	 default void method1() {
+		System.out.println("Abstract interface static method!");
+	}
+	 int i=10;
+}
+abstract class AbstractExample {
 	abstract void Display();
 	static void Method() {
 		System.out.println("Abstact class method with body!");
@@ -34,7 +40,7 @@ abstract class AbstractExample{
 		System.out.println("Abstract class constructor!" +" :"+s);
 	}
 }
-public class AbstractKeyword extends AbstractExample{
+public class AbstractKeyword extends AbstractExample implements Hello{
 	AbstractKeyword(String s) {
 		super("Called abstractor class constructor");
 		//System.out.println("");
@@ -52,10 +58,12 @@ public class AbstractKeyword extends AbstractExample{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		AbstractExample ob = new AbstractKeyword("Abstract class constructor called using super keyword!");
+		Hello hl= new AbstractKeyword("Abstract interface Object reference");
 		ob.Display(); 
 		ob.normalMethod();
 		AbstractExample.Method();
-		
+		hl.method1();
+		System.out.println("abstract interface variable :"+Hello.i);
 		
 	}
 
