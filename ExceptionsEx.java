@@ -22,17 +22,79 @@ public class ExceptionsEx {
 		else 
 			System.out.println("You are good buddy!");
 	}
+	
 	public static void main(String[] args) {
 		
 		ExceptionsEx obj=new ExceptionsEx();
-		
-		try(Scanner sc= new Scanner(System.in);) {
+		//multiple object creation in try.
+		try(Scanner sc= new Scanner(System.in); Scanner sc1=new Scanner(System.in)) {
+			
 			System.out.println("Enter your integer :");
 			int i=sc.nextInt();
-			obj.test(i);
 			
-		} catch (BadException |NullPointerException e) { // We can call multiple exception at a time.
-			e.printStackTrace();
+			switch(i) {
+			case 1://only try  block
+				/*try {
+					System.out.println("try block");
+				}*/ // you can't define only try block
+				break;
+				
+			case 2:// try catch block
+				try {
+					System.out.println("Try block with catch: "+(1/0));
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+				break;
+				
+			case 3:// try with 2 catch block
+				try {
+					System.out.println("Try block with 2 catch block! ");
+				}catch(ArithmeticException e) {
+					e.printStackTrace();
+				}catch (Exception e) { 
+				//Can't define exception first and then ArithmeticException,because ArithmeticException is 
+				//subclass of Exception and code will never reach ArithmeticException.
+					e.getStackTrace();
+				}
+				break;
+				
+			case 4:// try  with multiple exception in catch block
+				try {
+					System.out.println("Multiple exceptions defined in catch block!");
+					obj.test(i);
+				}catch (BadException |NullPointerException e) { // We can call multiple exception at a time.
+					e.printStackTrace();
+				}
+				break;
+				
+			case 5: // try block without catch statement
+				try {
+					System.out.println("Try without catch!");
+				}finally {
+					System.out.println("finally block without catch!");
+				}//finally {} can't define multiple finally block
+				break;
+				
+			case 6:// Nested try catch
+				try {
+					System.out.println("Nested try-catch!");
+				}catch (NullPointerException e){
+					try {
+						
+					}finally {
+						try {
+							
+						}catch(Exception e1) {}
+					}
+				}break;
+				
+			default:
+				System.out.println("Default switch case!");
+				break;
+				
+		  } 
+			
 		}
 	}
 
