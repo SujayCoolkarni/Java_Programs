@@ -73,7 +73,7 @@ public class ExceptionsEx {
 					System.out.println("Try without catch!");
 				}finally {
 					System.out.println("finally block without catch!");
-				}//finally {} can't define multiple finally block
+				}//finally {} can't define multiple finally block at same level
 				break;
 				
 			case 6:// Nested try catch
@@ -85,7 +85,11 @@ public class ExceptionsEx {
 					}finally {
 						try {
 							
-						}catch(Exception e1) {}
+						}catch(Exception e1) {
+							
+						}finally { //Nested finally can be declared
+							
+						}
 					}
 				}break;
 				
