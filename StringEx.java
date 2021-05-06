@@ -1,4 +1,5 @@
 package packageP1;
+import java.util.StringJoiner;
 
 /* This Program illustrates String class and its method. 
  * 1. String class overrides equals() and hashcode() method . Strings are considered to be equal if 
@@ -27,36 +28,65 @@ public class StringEx {
 		StringBuffer s=new StringBuffer("Hi");
 		String str="val";
 		String str1="val";
-		
+
 		System.out.println(s.toString()+" "+str.hashCode() +" "+str1.hashCode());
 		//compareTo: it returns a positive integer if this String comes and a negative integer if this string comes before and zero if both strings is equal.
 		System.out.println("Comparison : "+str.compareTo(str1));
 		System.out.println(s.toString()+" "+str.hashCode() +" "+str1.hashCode());
-		
+
 		//charAt Example
 		System.out.println("CharAt :"+str1.charAt(2)); 
 		System.out.println("String literal comparison str==str1: "+str==str1);
-		
+
 		//Split example
 		String colon= "Java:Oracle:C++:C";
 		String[] split1=colon.split(":");
 		System.out.print("Split : ");
 		for (String st:split1) {
-		System.out.print(st+" ");
+			System.out.print(st+" ");
 		}
 		System.out.println();
-		
+
 		//substring example: public String substring(int beginIndex, int endIndex)
 		String subs=colon.substring(0,6);
 		System.out.println("Substring: "+subs);
-		
+
 		//indexOf method
 		System.out.println("Index of C: "+colon.indexOf("C++"));
-		
+
 		//contains method
 		System.out.println("Contains of: "+colon.contains("AB"));
-	
-		
+
+		//Join method
+		StringJoiner sj = new StringJoiner(":", "[", "]");
+		sj.add("George").add("Sally").add("Fred");
+		String desiredString = sj.toString();
+		System.out.println(desiredString);
+
+		StringJoiner sj1 = new StringJoiner(":", "[", "]");
+		sj1.add("George1").add("Sally1").add("Fred1");
+		String desiredString1 = sj1.toString();
+
+		// Merging two StringJoiner  
+		StringJoiner merge1 = sj.merge(sj1);   
+		System.out.println("String Joiner: "+merge1);
+
+		System.out.println("String Joiner Length :"+ merge1.length());
+
+		//StringBuffer
+		String name="Test";
+		StringBuffer sb=new StringBuffer(name);
+		String fName=sb.append(" Hello").toString();//here toString method converts StringBuffer to string.
+		System.out.println(fName);
+
+		//StringBuilder
+		String name1="Test1";
+		StringBuilder sbl= new StringBuilder(name1);
+		String fName1= sbl.insert(0, "Hi ").toString();
+		System.out.println(fName1);
+		String lName=sbl.delete(0, 2).toString();
+		System.out.println(lName);
+
 	}
 
 }
