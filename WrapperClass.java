@@ -9,20 +9,15 @@ import java.sql.Time;
  * 4. Wrapper classes offer a wide array of methods that allow you to fully integrate the primitive types into Java’s object hierarchy.
  * 5. Beginning JDK 9, Double, Float, Long, Integer(int num),Integer(String str), Short, Byte, 
  *    Character(char ch), and Boolean(boolean boolValue),Boolean(String boolString) constructors has been deprecated. 
- * 6. Java collections can't store primitives, they can use only objects. So Wrappers are used.
- * 7. Autoboxing is the process by which a primitive type is automatically encapsulated (boxed) into 
- *    its equivalent type wrapper whenever an object of that type is needed.
- * 8. Auto-unboxing is the process by which the value of a boxed object is automatically extracted (unboxed)
- *    from a type wrapper when its value is needed.   
- * 9. Compiler uses valueOf() method to convert primitive to Object and uses intValue(), doubleValue() 
+ * 6. Java collections can't store primitives, they can use only objects. So Wrappers are used.   
+ * 7. Compiler uses valueOf() method to convert primitive to Object and uses intValue(), doubleValue() 
  *    etc to get primitive value from Object.  
- * 10. Compiler uses valueOf() method to convert primitive to Object and uses intValue(), 
- *     doubleValue() etc to get primitive value from Object.
- * 11. valueOf() method is used to convert primitive type to object.
- * 12. Conversion from wrapper object to string can be done using toString() method.
- * 13. When we print reference variable toString method automatically get called. 
- * 14. == compares two string address while as .equals compares the content of two string.
+ * 8. valueOf() method is used to convert primitive type to object.
+ * 9. Conversion from wrapper object to string can be done using toString() method.
+ * 10. When we print reference variable toString method automatically get called. 
+ * 11. == compares two string address while as .equals compares the content of two string.
  */
+
 public class WrapperClass {
 
 	public static void main(String[] args) {
